@@ -3,6 +3,8 @@ Ever wanted to create your own Google Doodle? This project makes it possible. Ju
 the subject and event you want the Google to be about (ex. "Bill Gates" and "Birthday"),
 and this program will create a custom Google Doodle for you.
 
+<img src="Sample Doodles/Doodle6.png"/>
+
 ## What the Program Does
 - Download background image for subject and event.
 - Apply the style of the event background image to the content of the subject background image ("mash").
