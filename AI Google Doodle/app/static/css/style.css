@@ -1,0 +1,359 @@
+/* This CSS file defines the style used for the index.html file. This is a simple website 
+style I created to appropriately highlight the final Google Doodle, input forms, icons, etc.  */
+
+/* Style for the entire page. */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Center and size the main content of the page. */
+.content {
+    padding: 20px;
+    min-height: 100%;
+    margin: 0 auto -144px;
+    text-align: center;
+}
+
+/* Style the main row where the doodle and subject/event images
+are shown. */
+.row {
+    display: flex;
+    margin-top: 50px;
+}
+
+/* Style the main doodle image to be large and centered. */
+.imgHolder {
+    max-height: 405px;
+    max-width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    border-color: rgba(223, 225, 229, 0);
+    border-radius: 30px;
+}
+
+.imgHolder:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+/* Style the event and subject background images to be smaller and
+beside the main image. */
+.sideImgHolder {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.sideImgHolder img {
+    width: 284px;
+    border-radius: 30px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
+    object-fit: cover;
+    height: 182px;
+}
+
+/* The following four rule sets define the style for thea
+search icon and input form inside the search div.   */
+.searchHolder {
+    height: 45px;
+    display: flex;
+    line-height: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.searchHolder div {
+    margin: auto auto;
+    width: 270px;
+}
+
+.searchHolder p {
+    color: #5f6368;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.searchHolder input {
+    color: #5f6368;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0px;
+    background-color: transparent !important;
+    border: none;
+    width: 255px;
+    height: 45px;
+    border-radius: 30px;
+    outline: none;
+}
+
+/* Allow autofill and define its style for the text input fields. */
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-internal-autofill-selected {
+    background-color: transparent !important;
+    box-shadow: none;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* Define style for the first div in the searchHolder style - the subject input field. */
+.searchHolder div:first-child {
+    margin-right: 10px;
+    text-align: right;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    cursor: auto;
+}
+
+.searchHolder div:first-child input {
+    padding-right: 15px;
+    text-align: right;
+}
+
+.searchHolder div:first-child:hover {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+/* Define style for the search icon div. */
+.searchHolder div:nth-child(2) {
+    width: 50px;
+    margin: auto 0;
+}
+
+/* These three rule sets style the search icon and the loading icon that replaces it. */
+.searchHolder svg {
+    width: 20px;
+    height: 20px;
+    fill: #9AA0A6;
+}
+
+.searchHolder img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Define style for the loading icon div. */
+#loadingIcon{
+    display: none;
+    width: 50px;
+    margin: auto 0;
+    cursor: wait;    
+}
+
+/* Define style for the last div in the searchHolder style - the event input field. */
+.searchHolder div:last-child {
+    margin-left: 10px;
+    text-align: left;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    cursor: auto;
+}
+
+.searchHolder div:last-child input {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.searchHolder div:last-child:hover {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+/* The following two rule sets style the "Generate Doodle" button to be easily visible. */
+.submitButton input {
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+.submitButton input:hover {
+    color: #5F6368;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3)
+}
+
+/* Style the footer box at the bottom of the page.*/
+.footer div {
+    background: #f2f2f2;
+    line-height: 50px;
+    min-width: 980px;
+    border-top: 1px solid #e4e4e4;
+    padding: 0 30px;
+    font-size: 16px;
+}
+
+/* Style my Github link within the footer. */
+.footer div:last-child {
+    padding: 0;
+    text-align: center;
+}
+
+/* Color and define text appearance for all footer text. */
+.footer a,
+.footer p {
+    color: #5f6368;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin: 0px;
+}
+
+/* Add hover effect for Github link. */
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Modified style for medium-sized devices. */
+@media only screen and (max-width: 600px) {
+    .searchHolder div {
+        margin: auto auto;
+        width: 330px;
+    }
+
+    .imgHolder{
+        max-height: 350px;
+    }
+
+
+    .searchHolder input {
+        font-size: 24px;
+
+    }
+
+    .submitButton input {
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .searchHolder svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .searchHolder img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer div {
+        font-size: 22px;
+    }
+
+    .content{
+        margin: 0 auto -110px;
+    }
+}
+
+/* Modified style for small devices. */
+@media only screen and (max-height: 490px) {
+    .imgHolder  {
+        max-height: 202px;
+    }
+    
+
+    .searchHolder div {
+        margin: auto auto;
+        width: 330px;
+    }
+
+    .searchHolder input {
+        font-size: 24px;
+
+    }
+
+    .submitButton input {
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .searchHolder svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .searchHolder img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer div {
+        font-size: 22px;
+    }
+    .content{
+        margin: 0 auto -110px;
+    }
+}
+
+/* Modified style for medium to large devices (tablets, etc.) */
+@media only screen and (min-width: 890px) {
+    .row {
+        display: flex;
+    }
+    
+    .searchHolder input {
+        font-size: 22px;
+        height: 32px;
+    }
+
+    
+    .searchHolder svg {
+        width: 26px;
+        height: 26px;
+    }
+    .searchHolder img {
+        width: 26px;
+        height: 26px;
+    }
+
+
+    .submitButton input {
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .searchHolder {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer div {
+        font-size: 14px;
+        line-height: 34px;
+
+    }
+
+    .content{
+        margin: 0 auto -110px;
+    }
+}
+
+/* Modified style for large devices (laptops, desktops, etc.) */
+@media only screen and (min-width: 1200px) {
+    .searchHolder input {
+        font-size: 16px;
+    }
+}

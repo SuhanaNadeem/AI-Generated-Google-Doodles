@@ -1,0 +1,95 @@
+<!-- This file defines the structure of the webpage through which the user enters and receives
+their AI Generated Google Doodle. -->
+
+<html>
+
+<!-- Display webpage title and link CSS. -->
+<head>
+    <title>{{ title }} - Suhana Nadeem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+
+<body>
+    <!-- Main website content. -->
+    <div class="content">
+
+        <!-- Create a "row" of images, which display images with dynamic paths that are
+        changed via the Google Colab script (based on whether or not the doodle has been made).-->
+        <div class="row">
+            <!-- Show the subject image. -->
+            <div class="sideImgHolder">
+                <img src="{{ url_for('static', filename=subjectImage) }}" alt="Subject Background">
+            </div>
+            <!-- Show the final doodle. -->
+            <div class="imgHolder">
+                <img src="{{ url_for('static', filename=mainImage) }}" alt="AI Generated Google Doodle">
+            </div>
+            <!-- Show the event image. -->
+            <div class="sideImgHolder">
+                <img src="{{ url_for('static', filename=eventImage) }}" alt="Event Background">
+            </div>
+        </div>
+
+        <!-- Form through which user's subject and event requests are entered, and sent to the handle
+        function in the Google Colab script. -->
+        <form autocomplete="off" action="{{ url_for('handle') }}" method="post">
+
+            <div class="searchHolder">
+                <!-- Subject field. -->
+                <div>
+                    <input type="text" name="subject" placeholder="Enter a subject" id="personInput">
+                </div>
+                <!-- Search icon, to be shown before "Generated Doodle" has been pressed. -->
+                <div id="searchIcon">
+                    <span>
+                        <!-- Define the loading icon (svg). -->
+                        <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+                <!-- Loading icon, to be shown after "Generate Doodle" has been pressed. -->
+                <div id="loadingIcon">
+                    <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading GIF">
+                </div>
+                <!-- Subject field. -->
+                <div>
+                    <input type="text" name="event" placeholder="Enter an event" id="eventInput">
+                </div>
+            </div>
+            <!-- "Generate Doodle" button, which sends inputs to handle() in Colab script, and calls JS loading().  -->
+            <div class="submitButton">
+                <input type="submit" value="Generate AI Google Doodle" aria-label="Generate AI Google Doodle"
+                    onclick="loading();">
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer with creator information. -->
+    <footer class="footer">
+        <!-- This information is updated to include the entered subject and event once the "Generated Doodle"
+        button is pressed. -->
+        <div>
+            <p>Currently generating <span id="personName"></span> - <span id="eventName"></span></p>
+        </div>
+        <div>
+            <a href="https://github.com/SuhanaNadeem">Created by {{ author.authorName }}</a>
+        </div>
+    </footer>
+
+    <!-- JS script with loading() function. This replaces the search icon with loading icon 
+        and adds the entered person and event name in the footer. -->
+    <script type="text/javascript">
+        function loading() {
+            document.getElementById("searchIcon").style.display = "none";
+            document.getElementById("loadingIcon").style.display = "block";
+            document.getElementById("personName").innerText = document.getElementById("personInput").value;
+            document.getElementById("eventName").innerText = document.getElementById("eventInput").value;
+        }
+    </script>
+</body>
+
+</html>
