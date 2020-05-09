@@ -15,7 +15,7 @@ and this program will create a custom Google Doodle for you.
 - Overlay the "Google" text on the mashed background and place the icon.
 
 ## Usage
-- Important - upload the "AI Google Doodle" folder to your Google Drive from this main submission folder such that it has the following path: **My Drive/Colab Notebooks/AI Google Doodle/app**
+- Important - upload the "AI Google Doodle" folder to your Google Drive from here such that it has the following path: **My Drive/Colab Notebooks/AI Google Doodle/app**
 - Upload the **Suhana_Nadeem_AI_Google_Doodle_Project.ipynb** to your Google Drive such that it has the following path: **My Drive/Suhana_Nadeem_AI_Google_Doodle_Project.ipynb**
 - To open **Suhana_Nadeem_AI_Google_Doodle_Project.ipynb**, click "Open with" > "Connect more apps" > search for Google Colaboratory > "Connect". Then, open the project with Google Colaboratory. If you have used Colab before, you can just click "Open with Google Colaboratory".
 - Install the dependencies by running the code blocks as described in the Google Colab project. Restart Colab's runtime by going to **Runtime > Restart runtime...** when the text comments I've left in the project specify to do so.
